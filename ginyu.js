@@ -1,5 +1,3 @@
-
-
 // Función para detectar si el usuario es un bot de Google
 function esBot() {
     const userAgent = navigator.userAgent.toLowerCase();
